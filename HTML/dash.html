@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Helpdesk - Dash</title>
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="icon" href="favicon.ico?v=1.0">
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/dash.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+		<a class="navbar-brand" href="dash.html">Helpdesk</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="all.html">Existing tickets</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="new.html">New ticket</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="analytics.html">Analytics</a>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<span class="navbar-text" id="current-user"></span>
+				<a href="index.html" class="btn btn-outline-light logout-button">Log out</a>
+			</form>
+		</div>
+	</nav>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="jumbotron">
+					<h1 class="display-3 mb-3">Make-It-All helpdesk</h1>
+					<hr>
+
+					<div class="row">
+						<div class="col-md">
+							<div class="card mb-3">
+								<div class="card-body">
+									<h4 class="card-title">View all existing tickets</h4>
+									<a href="all.html" class="btn btn-primary btn-grow"><i class="fa fa-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md">
+							<div class="card mb-3">
+								<div class="card-body">
+									<h4 class="card-title">Create a new ticket</h4>
+									<a href="new.html" class="btn btn-primary btn-grow"><i class="fa fa-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md">
+							<div class="card mb-3">
+								<div class="card-body">
+									<h4 class="card-title">View system analytics</h4>
+									<a href="analytics.html" class="btn btn-primary btn-grow"><i class="fa fa-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div id="open-issues"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

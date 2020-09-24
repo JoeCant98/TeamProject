@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Helpdesk - Login</title>
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="icon" href="favicon.ico?v=1.0">
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/login.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+		<a class="navbar-brand" href="#">Helpdesk</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="card">
+					<img class="card-img-top" src="images/login.jpg" alt="Card image cap">
+					<div class="card-body">
+						<h4 class="card-title">Sign in</h4>
+						<form>
+							<div class="row">
+								<div class="col-md">
+									<div class="form-group">
+										<label for="username">Username</label>
+										<input type="text" class="form-control" id="username" >
+									</div>
+								</div>
+								<div class="col-md">
+									<div class="form-group">
+										<label for="password">Password</label>
+										<input type="password" class="form-control" id="password">
+									</div>
+								</div>
+							</div>
+							<p style="color: red;" id="error-message"></p>
+							<button type="button" class="btn btn-primary" id="login" style="float: right;">Login</button>
+						</form>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+</body>
+</html>

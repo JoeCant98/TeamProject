@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Helpdesk - Specialist Dash</title>
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	
+	<link rel="icon" href="favicon.ico?v=1.0">
+
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/fuse.min.js"></script>
+	<script src="js/specialist-issues.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+		<a class="navbar-brand" href="dash.html">Helpdesk</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item" view-as="specialist">
+					<a class="nav-link" href="problemtypes.html">Define a new problem type</a>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<span class="navbar-text" id="current-user"></span>
+				<a href="index.html" class="btn btn-outline-light logout-button">Log out</a>
+			</form>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="jumbotron">
+					<div class="row">
+						<div class="col-md-8">
+							<h2 class="display-4 mb-3">Specialist ticket hub</h2>
+						</div>
+						<div class="col-md-4">
+							<div class="btn-group w-100" data-toggle="buttons" style="margin-top: 18px;">
+								<label class="btn btn-secondary w-50">
+									<input type="radio" name="set-availability" id="available" autocomplete="off" checked>Available
+								</label>
+								<label class="btn btn-secondary w-50">
+									<input type="radio" name="set-availability" id="unavailable" autocomplete="off" checked>Unavailable
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row header-row">
+					<div class="col-md-6">
+						<h2><i class="fa fa-ticket"></i>&nbsp; Your assigned tickets</h2>
+					</div>
+					<div class="col-md-6">
+						<div class="input-group">
+							<input type="text" class="form-control" id="searchInput" placeholder="Find a ticket...">
+							<span class="input-group-addon" data-toggle="tooltip" data-placement="bottom" title="Search by issue number, status, type or summary"><i class="fa fa-question" ></i></span>
+						</div>
+					</div>
+				</div>
+				<hr>
+
+				<div class="row">
+					<div class="col">
+						<div class="list-group" id="all-issues">
+							<div class="list-group-item flex-column align-items-start list-heading">
+								<div class="d-flex flex-row">
+									<div class="p-2 col"><b>Number</b>&nbsp; <i class="fa fa-sort sort-button" id="sort-id"></i></div>
+									<div class="p-2 col"><b>Submitted</b></div>
+									<div class="p-2 col"><b>Status</b>&nbsp; <i class="fa fa-sort sort-button" id="sort-status"></i></div>
+									<div class="p-2 col"><b>Type</b></div>
+									<div class="p-2 col"><b>Summary</b></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

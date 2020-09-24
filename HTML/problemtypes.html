@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Helpdesk - Specialist Dash</title>
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	
+	<link rel="icon" href="favicon.ico?v=1.0">
+
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/problem-types.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+		<a class="navbar-brand" href="dash.html">Helpdesk</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active" view-as="specialist">
+					<a class="nav-link" href="problemtypes.html">Define a new problem type</a>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<span class="navbar-text" id="current-user"></span>
+				<a href="index.html" class="btn btn-outline-light logout-button">Log out</a>
+			</form>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="row header-row">
+					<div class="col-md-12">
+						<h2><i class="fa fa-exclamation-circle"></i> Define a new problem type</h2>
+					</div>
+				</div>
+				<hr>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-7">
+				<label for="description">Problem description</label>
+				<input type="text" class="form-control" id="description">
+			</div>
+			<div class="col-md-3">
+				<label for="subtype-of">Subtype of</label>
+				<select class="custom-select w-100" id="subtype-of">
+					<option value="-1">None</option>
+				</select>
+			</div>
+			<div class="col-md-2">
+				<button class="btn btn-primary w-100" id="create-problem-type" style="position: absolute; bottom: 0;">Create</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

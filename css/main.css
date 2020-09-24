@@ -1,0 +1,143 @@
+.container, .container-fluid {
+	margin-top: 20px;
+	padding-bottom: 40px;
+}
+
+.logout-button {
+	margin-left: 20px;
+}
+.logout-button:hover {
+	color: #007bff;
+}
+
+.list-heading {
+	background: #f0f0f0;
+}
+
+.no-overflow {
+	white-space: nowrap;
+	overflow: hidden;	
+	text-overflow: ellipsis;
+}
+
+#user-select {
+	border-radius: 0 .25rem .25rem 0;
+}
+
+.custom-select {
+	margin-right: 15px;
+	transition: 0.15s;
+}
+.block-select {
+	display: block;
+}
+
+.tags {
+	display: block;
+	margin-top: 10px;
+}
+.tags > .badge {
+	padding: 4px 6px;
+	margin: 2px; 
+}
+
+.problem-metadata {
+	animation-duration: 0.75s;
+}
+.problem-metadata > * {
+	margin-bottom: 15px;
+}
+
+@media only screen and (max-width : 991px) {
+	.close-issue {
+		padding-left: 0 !important;
+		margin-top: -1px;
+		margin-left: 6px;
+	}
+
+	.header-row > * {
+		margin-bottom: 18px;
+	}
+}
+@media only screen and (min-width : 991px) {
+	.close-issue {
+		padding-left: 0 !important;
+		margin-top: -1px;
+		margin-left: -2px;
+	}
+}
+
+.nav-item {
+	display: flex;
+}
+
+.fa-small {
+	font-size: 12px;
+}
+
+.sort-button {
+	cursor: pointer;
+}
+
+.btn-grow {
+	transition: 0.3s ease-in-out;
+}
+.btn-grow:hover {
+	padding-left: 60px;
+}
+
+#followup-id {
+	display: none;
+}
+
+.green {
+	color: #2ecc71;
+}
+.orange {
+	color: #f39c12;
+}
+.red {
+	color: #e74c3c;
+}
+
+#current-user {
+	color: rgba(255, 255, 255, 0.9);
+	font-size: 1rem;
+}
+
+
+.bar-container {
+	height: 32px;
+	width: 100%;
+	background-color: #f0f0f0;
+	margin-bottom: 18px;
+	border-radius: 16px;
+}
+.bar {
+	height: 32px;
+	color: white;
+	padding: 4px 14px;
+	border-radius: 16px;
+	min-width: 50px;
+}
+.bar > p {
+	display: inline-block;
+}
+
+#bar-pending {
+	background-color: #e74c3c;
+}
+#bar-ongoing {
+	background-color: #f39c12;
+}
+#bar-solved {
+	background-color: #2ecc71;
+}
+#bar-operator, #bar-hardware {
+	background-color: #007aff;
+}
+#bar-specialist, #bar-software {
+	background-color: #74b9ff;
+}
+
+

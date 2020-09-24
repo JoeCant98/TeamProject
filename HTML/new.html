@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Helpdesk - New ticket</title>
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="icon" href="favicon.ico?v=1.0">
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/create-issue.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+		<a class="navbar-brand" href="dash.html">Helpdesk</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="all.html">Existing tickets</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">New ticket <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="analytics.html">Analytics</a>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<span class="navbar-text" id="current-user"></span>
+				<a href="index.html" class="btn btn-outline-light logout-button">Log out</a>
+			</form>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3 problem-metadata">
+				<h2><i class="fa fa-plus"></i> New ticket</h2>
+				<div class="form-group">
+					<label for="created-by">Created by</label>
+					<h4 id="created-by"></h4>
+				</div>
+				<hr>
+				<div class="btn-group w-100" data-toggle="buttons">
+					<label class="btn btn-secondary active w-50">
+						<input type="radio" name="ticket-type" id="ticket-new" autocomplete="off" checked>New
+					</label>
+					<label class="btn btn-secondary w-50">
+						<input type="radio" name="ticket-type" id="ticket-followup" autocomplete="off">Follow-up
+					</label>
+				</div>
+				<input type="text" class="form-control" id="followup-id" placeholder="This is a follow-up of...">
+				<button type="button" class="btn btn-primary w-100" id="button-create" style="float: right;">Create ticket</button>
+				
+				<h4 class="green" id="created-prompt" style="display: none;"><i class="fa fa-check"></i> Ticket created!</h4>
+				<h4 class="red" id="failed-prompt" style="display: none;"><i class="fa fa-close"></i> An error occured.</h4>
+			</div>
+			<div class="col-sm-9">
+				<form>
+					<div class="row">
+						<div class="col-sm">
+							<div class="form-group">
+								<label for="callerName">Caller name</label>
+								<input type="text" class="form-control" id="callerName" name="name" >
+							</div>
+						</div>
+						<div class="col-sm">
+							<div class="form-group">
+								<label for="staffEmail">Contact email</label>
+								<input type="email" class="form-control" id="staffEmail" name="email">
+							</div>
+						</div>
+					</div>
+				
+					<div class="form-group">
+						<label for="problem-type">Problem type</label>
+						<br>
+						<select class="custom-select" id="problem-type">
+							<option value="">Please select...</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="assign-specialist">Assign a specialist</label>
+						<select class="custom-select block-select" id="assign-specialist" name="specialist">
+							<option value="">Please select...</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="tags">Tags <i>(comma separated)</i></label>
+						<input class="form-control" id="tags" name="tags">
+					</div>
+
+					<label>Issue classification</label>
+					<ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" id="pills-hw-tab" data-toggle="pill" href="#hardware" role="tab" aria-controls="pills-home" aria-expanded="true">Hardware</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="pills-sw-tab" data-toggle="pill" href="#software" role="tab" aria-controls="pills-profile" aria-expanded="true">Software</a>
+						</li>
+					</ul>
+
+					<div class="tab-content" id="myTabContent">
+						<div class="tab-pane fade active show" id="hardware" role="tabpanel">
+								<div class="form-group">
+									<label for="userName">Hardware serial number</label>
+									<input type="text" class="form-control in-tab" id="hardware-serial">
+								</div>
+								<div class="form-group">
+									<label for="problem-summary">Problem summary</label>
+			    					<input class="form-control in-tab" id="hw-problem-summary">
+								</div>
+								<div class="form-group">
+									<label for="staffNumber">Problem details</label>
+									<textarea class="form-control in-tab" rows="5" id="hw-problem-details"></textarea>
+								</div>
+						</div>
+						<div class="tab-pane fade" id="software" role="tabpanel">
+								<div class="form-group">
+									<label for="operatingsystem">Operating system</label>
+			    					<input class="form-control in-tab" id="operatingsystem">
+								</div>
+
+								<div class="row">
+									<div class="col-sm">
+										<div class="form-group">
+											<label for="software-name">Software name</label>
+					    					<input class="form-control in-tab" id="software-name">
+										</div>
+									</div>
+									<div class="col-sm">
+										<div class="form-group">
+											<label for="software-version">Software version</label>
+					    					<input class="form-control in-tab" id="software-version">
+										</div>
+									</div>
+									<div class="col-sm">
+										<div class="form-group">
+											<label for="software-license">Software license code</label>
+											<input type="text" class="form-control in-tab" id="software-license">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="problem-summary">Problem summary</label>
+			    					<input class="form-control in-tab" id="sw-problem-summary">
+								</div>
+								<div class="form-group">
+									<label for="problem-details">Problem details</label>
+									<textarea class="form-control in-tab" rows="5" id="sw-problem-details"></textarea>
+								</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

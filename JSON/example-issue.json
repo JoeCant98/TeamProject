@@ -1,0 +1,31 @@
+{
+	"id": 1234,
+	"createdAt": 1508502140338,
+	"status": "ongoing",
+	"people": {
+		"createdBy": "Tom Snelling",
+		"callerName": "John Smith",
+		"callerEmail": "john.smith@internalemail.com",
+		"specialist": null
+	},
+	"details": {
+		"isNewProblem": true,
+		"followupOf": null,
+		"problemClassification": "hardware",
+		"problemType": "Printer issue",
+		"serialNumber": "123890XYZ",
+		"operatingSystem": null,
+		"softwareName": null,
+		"softwareVersion": null, 
+		"softwareLicense": null,
+		"problemSummary": "Documents not printing",
+		"problemDetail": "Documents are successfully being sent to the printer, but nothing is ever printed.",
+		"tags": "printer, hardware, jammed"
+	},
+	"solution": {
+		"isSolved": false,
+		"solvedAt": null,
+		"solvedBy": null,
+		"solutionDetail": null
+	}
+}
